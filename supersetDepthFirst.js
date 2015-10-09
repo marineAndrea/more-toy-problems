@@ -9,18 +9,16 @@ Output: [ [], [ 1 ], [ 1, 2 ], [ 1, 2, 3 ], [ 1, 3 ], [ 2 ], [ 2, 3 ], [ 3 ] ]
 var supersetDF = function(input) {
   var output = [[]];
   var copy;
-  var subsets = function(arr, last) {
-    for (var i = 0; i < input.length; i++) {
-      if (input[i] > last) {
-        arr = arr.concat([input[i]]);
-        copy = arr.slice();
-        output.push(copy);
-        arr.pop();
-        subsets(copy, copy[copy.length-1]);
-      }
+  var subsets = function(arr, idx) {
+    for (var i = idx+1; i < input.length; i++) {
+      arr = arr.concat([input[i]]);
+      copy = arr.slice();
+      output.push(copy);
+      arr.pop();
+      subsets(copy, i);
     }
   };
-  subsets([], 0);
+  subsets([], -1);
   return output;
 };
 
