@@ -12,10 +12,10 @@ var supersetDF = function(input) {
   var subsets = function(arr, idx) {
     for (var i = idx+1; i < input.length; i++) {
       arr = arr.concat([input[i]]);
-      copy = arr.slice();
+      copy = arr.slice(); // to counteract array mutation
       output.push(copy);
-      arr.pop();
       subsets(copy, i);
+      arr.pop();
     }
   };
   subsets([], -1);
