@@ -1,12 +1,12 @@
 // Take any number of strings, find the overlap between all the strings
 
-var stringOverlap = function(str) {
+var stringOverlap = function(str) { // time complexity: quadratic
   var args = Array.prototype.slice.call(arguments);
   var substring = "";
   var allStrings, small, others;
 
   // take smallest string
-  var getSmallest = function(args) {
+  var getSmallest = function(args) { // time complexity: linear (nb of args)
     var len = args[0].length;
     for (var i = 0; i < args.length; i++) {
       if (args[i].length <= len) {
@@ -20,7 +20,7 @@ var stringOverlap = function(str) {
   };
 
   // get substrings and check
-  var getSubstrings = function(small, others) {
+  var getSubstrings = function(small, others) { // time complexity: checkOverlap * strLength <-> nb of args * strLength^2
     if (checkOverlap(small, others)) {
       return small;
     } else {
@@ -41,7 +41,7 @@ var stringOverlap = function(str) {
   };
 
   // check if substring overlap
-  var checkOverlap = function(small, others) {
+  var checkOverlap = function(small, others) { // time complexity: strLength * nb of args
     for (var i = 0; i < others.length; i++) {
       if (others[i].indexOf(small) === -1) {
         return false;
