@@ -16,7 +16,6 @@ var findNbWords = function(txt) {
     }
     txt = txt.slice(bk+2);
   }
-  console.log('sentences', sentences);
 
   // separate sentence in words
   var separator = function(sentence) {
@@ -39,7 +38,6 @@ var findNbWords = function(txt) {
   for (var i = 0; i < sentences.length; i++) {
     if (separator(sentences[i]).length > longestSentence) {
       longestSentence = separator(sentences[i]).length;
-      console.log('which', i+1, separator(sentences[i]));
     }
   }
   return longestSentence;

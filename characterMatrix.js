@@ -11,6 +11,7 @@ var toggle = function(matrix, x, y) {
   } else if (matrix[x][y] === true) {
     matrix[x][y] = false;
   }
+  return;
 };
 
 
@@ -19,7 +20,7 @@ var findWords = function(matrix, dict) {
   var sequence = '';
   var wordsObj = {};
   var words = [];
-  
+
   // copy matrix to keep track of path already taken
   var width = matrix[0].length;
   var height = matrix.length;
@@ -65,7 +66,8 @@ var findWords = function(matrix, dict) {
         seq += matrix[x][y];
         if (seq in dict) {
           // console.log('found', seq);
-          wordsObj[seq] = 1;
+          // wordsObj[seq] = 1;
+          words.push(seq);
         }
         // add coordinates to path
         toggle(path, x, y);
@@ -89,7 +91,8 @@ var findWords = function(matrix, dict) {
       sequence = matrix[h][w];
       if (sequence in dict) {
         // console.log('found', seq);
-        wordsObj[sequence] = 1;
+        // wordsObj[sequence] = 1;
+        words.push(sequence);
       }
       toggle(path, h, w);
       // first move in any possible direction
@@ -105,13 +108,13 @@ var findWords = function(matrix, dict) {
     }
   }
   
-  for (var key in wordsObj) {
-    words.push(key);
-  }
+  // for (var key in wordsObj) {
+  //   words.push(key);
+  // }
 
   return words;
 };
-
+ 
 var input = [['b', 'c', 'a'], ['o', 'a', 't'], ['o', 'c', 's'], ['b', 'i', 'e']];
 // ['b', 'c', 'a']
 // ['o', 'a', 't']

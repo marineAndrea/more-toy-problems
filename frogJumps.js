@@ -31,7 +31,7 @@ each element of array A is an integer within the range [1..Xâˆ’1].*/
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(X), beyond input storage (not counting the storage required for input arguments).*/
 
-var solution = function(a, x, d) {
+var findTime = function(a, x, d) {
   var last = 0;
   var time = 0;
   var found = false;
@@ -49,12 +49,12 @@ var solution = function(a, x, d) {
   return found === true? time : -1;
 };
 
-console.log(solution([1, 3, 1, 4, 2, 5], 7, 3));
+console.log(findTime([1, 3, 1, 4, 2, 5], 7, 3));
 
 
 // RECURSIVE SOLUTION
 
-var solution = function(a, x, d) {
+var findTime2 = function(a, x, d) {
   var newRange = [x-d, x-1];
   var found, leave, time;
   var minTime = 0;
@@ -93,5 +93,5 @@ var solution = function(a, x, d) {
   return minTime;
 };
 
-console.log(solution([1, 3, 1, 4, 2, 5], 7, 3));
+console.log(findTime2([1, 3, 1, 4, 2, 5], 7, 3));
 

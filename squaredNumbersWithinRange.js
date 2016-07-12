@@ -1,13 +1,10 @@
 // Calculate number of squares within min and max value.
 
 var squaredNumbers = function(low, high) {
-  console.log('sq nb called');
   var output = [];
   var n = 0;
   while (n <= high) {
-    console.log('while', n);
     if (n*n > high){
-      console.log('out', output);
       break;
     }
     if (n*n >= low) {
@@ -18,7 +15,7 @@ var squaredNumbers = function(low, high) {
   return output;
 };
 
-//console.log(squaredNumbers(5, 30));
+console.log(squaredNumbers(5, 30));
 
 
 //////////// OTHER SOLUTION ////////////
