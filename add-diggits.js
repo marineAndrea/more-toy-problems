@@ -16,12 +16,19 @@ var addDigits = function(num) {
 		return total;
 	}
 };
-console.log(addDigits(962435245));
+console.log(addDigits(18));
 
 /*Follow up:
 Could you do it without any loop/recursion in O(1) runtime?*/
 
 var addDigits2 = function(num) {
-	return num === 0 ? 0 : num%9;
+	if (num === 0) {
+		return 0;
+	}
+	if (num%9 === 0) {
+		return 9;
+	} else {
+		return num%9;
+	}
 };
-console.log(addDigits2(962435245));
+console.log(addDigits2(18));
