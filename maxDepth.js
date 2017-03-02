@@ -80,7 +80,7 @@ var getNewTree =  function(tree, level, rightMarks, treeCopies) {
 		}
 		return {'currentTree': currentTree, 'currentLevel': currentLevel, 'rightMarks': rightMarks, 'treeCopies': treeCopies};
 	}
-}
+};
 
 var moveFurther = function(tree, level) {
 	if (level === 0) {
@@ -99,10 +99,10 @@ var moveFurther = function(tree, level) {
 	  currentTree = treeCopies.pop();
 	  // delete subtree and update variables
 	  newVariables = getNewTree(currentTree, currentLevel, rightMarks, treeCopies);
-	  currentTree = newVariables['currentTree'];
-	  currentLevel = newVariables['currentLevel'];
-	  rightMarks = newVariables['rightMarks'];
-	  treeCopies = newVariables['treeCopies'];
+	  currentTree = newVariables.currentTree;
+	  currentLevel = newVariables.currentLevel;
+	  rightMarks = newVariables.rightMarks;
+	  treeCopies = newVariables.treeCopies;
 	  // repeat all
 	  return moveFurther(currentTree, currentLevel);
 	} else if (tree.left === null) { // tree.right is not null
@@ -124,6 +124,6 @@ var moveFurther = function(tree, level) {
 		// repeat all
 		return moveFurther(currentTree, currentLevel);
 	}
-}
+};
 
 console.log(moveFurther(tree, rootLevel));

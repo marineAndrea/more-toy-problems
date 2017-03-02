@@ -24,6 +24,6 @@ var singleNummber = function(nums) {
 		}
 	}
 	return singles;
-}
+};
 
 console.log(singleNummber([1, 2, 1, 3, 2, 5]));

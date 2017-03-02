@@ -61,9 +61,10 @@ var checkPerm = function(str1, str2) {
 	    current = removeChar(current, i);
 	    rest = insertChar(rest, char, i);
 		}
-	}
+	};
   generatePerm("", str1);
   return isPerm;
 };
 
-console.log(checkPerm2('abcb', 'bbcc'));
+console.log(checkPerm('abcb', 'abbc'));
+console.log(checkPerm('abcb', 'abdc'));

@@ -33,7 +33,7 @@ var isBalanced = function(tree) {
 	  }
 	}
   return checkHeight(tree) === -1 ? false : true;
-}
+};
 
 var myTree = {
 	val: 1,

@@ -14,9 +14,9 @@ var tripleStep = function() {
       cache[n] = count;
     }
     return count;
-  }
+  };
   return addToCount;
-}
+};
 var totalLeaves = tripleStep();
 console.log('totalLeaves', totalLeaves(6));
 console.log(totalLeaves(7));
@@ -29,7 +29,7 @@ var iterTripleStep = function(n) {
   var last, total;
   while (cache.length - 1 < n) {
     last = cache.length-1;
-    total = 0
+    total = 0;
     for (var i = last; i > last - 3; i--) {
       if (i >= 0) {
         total += cache[i];
@@ -38,5 +38,5 @@ var iterTripleStep = function(n) {
     cache.push(total);
   }
   return cache[cache.length-1];
-}
+};
 console.log('iterTripleStep', iterTripleStep(7));

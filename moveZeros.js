@@ -15,7 +15,7 @@ var moveZeros = function(nums) {
   		i--;
   	}
   }
-	return;
-}
+	return nums;
+};
 
 console.log(moveZeros([0, 1, 0, 3, 12]));
