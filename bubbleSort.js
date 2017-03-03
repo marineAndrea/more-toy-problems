@@ -1,6 +1,6 @@
 // bubble sort
 
-var arr = [10, 4, 2, 6, 4, 8, 9, 9, 2, 0];
+var arr = [10, 4, 2, 6, 4, 8, -1, 9, 2, 0];
 
 var bubbleSort = function(arr) {
   var sorted = false;
